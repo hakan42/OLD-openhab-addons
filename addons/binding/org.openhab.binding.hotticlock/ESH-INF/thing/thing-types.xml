@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="hotticlock"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+        xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+    <thing-type id="clock">
+        <label>HottiClock Binding Thing</label>
+        <description>Clock Thing for HottiClock Binding</description>
+
+        <channels>
+            <channel id="raw-in" typeId="raw-channel"/>
+            <channel id="raw-out" typeId="raw-channel"/>
+
+            <channel id="version" typeId="message"/>
+        </channels>
+    </thing-type>
+
+    <!-- Raw Channel Type -->
+    <channel-type id="raw-channel">
+        <item-type>raw</item-type>
+        <label>HottiClock raw data exchange</label>
+        <description>Raw data exchange channel for HottiClock Binding</description>
+    </channel-type>
+
+    <channel-type id="message">
+        <item-type>message</item-type>
+        <label>HottiClock Message</label>
+        <description>... channel for HottiClock Binding</description>
+    </channel-type>
+
+</thing:thing-descriptions>

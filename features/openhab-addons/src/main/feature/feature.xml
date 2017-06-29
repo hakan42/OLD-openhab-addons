@@ -129,6 +129,15 @@
         <bundle start-level="80">mvn:org.openhab.binding/org.openhab.binding.homematic/${project.version}</bundle>
     </feature>
 
+    <feature name="openhab-binding-hotticlock" description="HottiClock Binding" version="${project.version}">
+        <feature>openhab-runtime-base</feature>
+        <feature>openhab-runtime-compat1x</feature>
+        <!-- <feature>openhab-transport-mqtt</feature> -->
+        <!-- <bundle start-level="80">mvn:org.openhab.io/org.openhab.io.transport.mqtt/${project.version}</bundle> -->
+        <bundle start-level="80">mvn:org.openhab.binding/org.openhab.binding.hotticlock/${project.version}</bundle>
+        <configfile finalname="${openhab.conf}/services/hotticlock.cfg" override="false">mvn:${project.groupId}/openhab2-addons-external/${project.version}/cfg/hotticlock</configfile>
+    </feature>
+
     <feature name="openhab-binding-hdanywhere" description="HDAnywhere Binding" version="${project.version}">
         <feature>openhab-runtime-base</feature>
         <bundle start-level="80">mvn:org.openhab.binding/org.openhab.binding.hdanywhere/${project.version}</bundle>
