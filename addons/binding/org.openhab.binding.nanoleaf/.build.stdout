@@ -1,0 +1,95 @@
+Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T09:58:13+02:00)
+Maven home: /opt/maven/apache-maven-3.5.2
+Java version: 1.8.0_121, vendor: Oracle Corporation
+Java home: /opt/jdk/jdk1.8.0_121/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.8.0-59-generic", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] Computing target platform for MavenProject: org.openhab.binding:org.openhab.binding.nanoleaf:2.5.0-SNAPSHOT @ /home/hakan/src/openhab/openhab2-addons-nanoleaf/addons/binding/org.openhab.binding.nanoleaf/pom.xml
+[INFO] Adding repository https://dl.bintray.com/openhab/p2/openhab-deps-repo/1.0.38
+[INFO] Resolving dependencies of MavenProject: org.openhab.binding:org.openhab.binding.nanoleaf:2.5.0-SNAPSHOT @ /home/hakan/src/openhab/openhab2-addons-nanoleaf/addons/binding/org.openhab.binding.nanoleaf/pom.xml
+[INFO] Resolving class path of MavenProject: org.openhab.binding:org.openhab.binding.nanoleaf:2.5.0-SNAPSHOT @ /home/hakan/src/openhab/openhab2-addons-nanoleaf/addons/binding/org.openhab.binding.nanoleaf/pom.xml
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Nanoleaf Binding 2.5.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ org.openhab.binding.nanoleaf ---
+[INFO] Deleting /home/hakan/src/openhab/openhab2-addons-nanoleaf/addons/binding/org.openhab.binding.nanoleaf/target
+[INFO] 
+[INFO] --- tycho-packaging-plugin:1.2.0:build-qualifier (default-build-qualifier) @ org.openhab.binding.nanoleaf ---
+[INFO] The project's OSGi version is 2.5.0.201901081953
+[INFO] 
+[INFO] --- tycho-packaging-plugin:1.2.0:validate-id (default-validate-id) @ org.openhab.binding.nanoleaf ---
+[INFO] 
+[INFO] --- tycho-packaging-plugin:1.2.0:validate-version (default-validate-version) @ org.openhab.binding.nanoleaf ---
+[INFO] 
+[INFO] --- directory-maven-plugin:0.2:highest-basedir (directories) @ org.openhab.binding.nanoleaf ---
+[INFO] Highest basedir set to: /home/hakan/src/openhab/openhab2-addons-nanoleaf
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ org.openhab.binding.nanoleaf ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/hakan/src/openhab/openhab2-addons-nanoleaf/addons/binding/org.openhab.binding.nanoleaf/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler-plugin:1.2.0:compile (default-compile) @ org.openhab.binding.nanoleaf ---
+[INFO] Compiling 6 source files to /home/hakan/src/openhab/openhab2-addons-nanoleaf/addons/binding/org.openhab.binding.nanoleaf/target/classes
+[WARNING] /home/hakan/src/openhab/openhab2-addons-nanoleaf/addons/binding/org.openhab.binding.nanoleaf/src/main/java/org/openhab/binding/nanoleaf/internal/handler/NanoleafHandler.java:[78] 
+	publishProperties(config);
+	                  ^^^^^^
+Null type mismatch (type annotations): required '@NonNull NanoleafConfiguration' but this expression has type '@Nullable NanoleafConfiguration'
+1 problem (1 warning)
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default) @ org.openhab.binding.nanoleaf ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-scr-plugin:1.24.0:scr (generate-scr-scrdescriptor) @ org.openhab.binding.nanoleaf ---
+[INFO] Writing 1 Service Component Descriptors to /home/hakan/src/openhab/openhab2-addons-nanoleaf/addons/binding/org.openhab.binding.nanoleaf/target/classes/OSGI-INF/org.openhab.binding.nanoleaf.internal.discovery.NanoleafDiscoveryParticipant.xml
+[INFO] Writing 1 Service Component Descriptors to /home/hakan/src/openhab/openhab2-addons-nanoleaf/addons/binding/org.openhab.binding.nanoleaf/target/classes/OSGI-INF/org.openhab.binding.nanoleaf.internal.NanoleafHandlerFactory.xml
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ org.openhab.binding.nanoleaf ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:copy-resources (default) @ org.openhab.binding.nanoleaf ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- target-platform-configuration:1.2.0:target-platform (default-target-platform) @ org.openhab.binding.nanoleaf ---
+[INFO] 
+[INFO] --- tycho-packaging-plugin:1.2.0:package-plugin (default-package-plugin) @ org.openhab.binding.nanoleaf ---
+[INFO] Building jar: /home/hakan/src/openhab/openhab2-addons-nanoleaf/addons/binding/org.openhab.binding.nanoleaf/target/org.openhab.binding.nanoleaf-2.5.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2-plugin:1.2.0:p2-metadata-default (default-p2-metadata-default) @ org.openhab.binding.nanoleaf ---
+[INFO] 
+[INFO] --- sat-plugin:0.5.0:checkstyle (default) @ org.openhab.binding.nanoleaf ---
+[INFO] Adding dependency to checkstyle:0.5.0
+[INFO] Adding dependency to checkstyle:8.1
+[INFO] 
+[INFO] --- sat-plugin:0.5.0:pmd (default) @ org.openhab.binding.nanoleaf ---
+[INFO] Adding dependency to pmd:0.5.0
+[INFO] Adding dependency to pmd-core:5.8.1
+[INFO] Adding dependency to pmd-java:5.8.1
+[INFO] Adding dependency to pmd-javascript:5.8.1
+[INFO] Adding dependency to pmd-jsp:5.8.1
+[INFO] 
+[INFO] --- sat-plugin:0.5.0:spotbugs (default) @ org.openhab.binding.nanoleaf ---
+[INFO] Adding dependency to findbugs:0.5.0
+[INFO] Adding dependency to bug-pattern:1.2.4
+[INFO] Adding dependency to spotbugs:3.1.2
+[INFO] 
+[INFO] --- sat-plugin:0.5.0:report (default) @ org.openhab.binding.nanoleaf ---
+[INFO] Individual report appended to summary report.
+[WARNING] Code Analysis Tool has found: 
+ 0 error(s)! 
+ 1 warning(s) 
+ 14 info(s)
+[WARNING] :[0]
+Unused configuration reference with uri - thing-type:nanoleaf:config
+[INFO] Detailed report can be found at: file:////home/hakan/src/openhab/openhab2-addons-nanoleaf/addons/binding/org.openhab.binding.nanoleaf/target/code-analysis/report.html
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 39.128 s
+[INFO] Finished at: 2019-01-08T20:54:09+01:00
+[INFO] Final Memory: 57M/169M
+[INFO] ------------------------------------------------------------------------

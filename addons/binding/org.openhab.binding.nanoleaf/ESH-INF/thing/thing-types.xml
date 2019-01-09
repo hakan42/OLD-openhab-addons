@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="nanoleaf"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+	<!-- Controller that drives each collection of Leafs -->
+	<!-- TODO make this extensible so we can add leafs at will, maybe even code-driven -->
+	<thing-type id="controller">
+		<label>Nanoleaf Controller</label>
+		<description>Nanoleaf Controller description</description>
+
+		<channels>
+			<channel id="panel_1" typeId="panel-channel" />
+			<channel id="panel_2" typeId="panel-channel" />
+			<channel id="panel_3" typeId="panel-channel" />
+			<channel id="panel_4" typeId="panel-channel" />
+			<channel id="panel_5" typeId="panel-channel" />
+			<channel id="panel_6" typeId="panel-channel" />
+			<channel id="panel_7" typeId="panel-channel" />
+			<channel id="panel_8" typeId="panel-channel" />
+			<channel id="panel_9" typeId="panel-channel" />
+		</channels>
+
+		<properties>
+			<property name="apiURL">API URL</property>
+		</properties>
+
+		<config-description>
+			<parameter name="host" type="text" required="true">
+				<context>network-address</context>
+				<label>IP Address or Host name</label>
+				<description>Hostname or IP address of the controller</description>
+			</parameter>
+
+			<parameter name="port" type="integer" required="false">
+				<label>Port</label>
+				<description>Port of the controller</description>
+				<default>16021</default>
+			</parameter>
+
+			<parameter name="authcode" type="text" required="false">
+				<context>password</context>
+				<label>Authorization Code</label>
+				<description>Blurchfurbl</description>
+			</parameter>
+
+			<!--
+			<parameter name="refreshInterval" type="integer">
+				<label>Refresh Interval</label>
+				<description>The refresh interval in ms which is used to poll given pulseaudio server.</description>
+				<default>30000</default>
+				<required>false</required>
+			</parameter>
+			-->
+		</config-description>
+
+		<!--
+		<config-description-ref uri="thing-type:nanoleaf:config" />
+		-->
+	</thing-type>
+
+	<!-- Channel describing one single panel Channel Type -->
+	<channel-type id="panel-channel">
+		<item-type>String</item-type>
+		<label>Nanoleaf Panel</label>
+		<description>Represents a single triangular panel</description>
+	</channel-type>
+
+</thing:thing-descriptions>
