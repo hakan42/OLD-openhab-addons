@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="withings"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+	<channel-type id="raw-input-for-ifttt">
+		<item-type>String</item-type>
+		<label>RawInputForIFTTT</label>
+		<description>Raw data to parse </description>
+		<state readOnly="false"/>
+	</channel-type>
+
+	<channel-type id="weight">
+		<item-type>Number</item-type>
+		<label>Body Weight</label>
+		<description>Body Weight...</description>
+		<state readOnly="true"/>
+	</channel-type>
+
+	<channel-type id="lean-mass">
+		<item-type>Number</item-type>
+		<label>Lean Mass</label>
+		<description>Lean Mass...</description>
+		<state readOnly="true"/>
+	</channel-type>
+
+	<channel-type id="fat-mass">
+		<item-type>Number</item-type>
+		<label>Fat Mass</label>
+		<description>Fat Mass...</description>
+		<state readOnly="true"/>
+	</channel-type>
+
+	<channel-type id="body-fat-percentage">
+		<item-type>Number</item-type>
+		<label>Mass Percentage</label>
+		<description>Mass Percentage...</description>
+		<state readOnly="true"/>
+	</channel-type>
+
+	<channel-type id="measured-at">
+		<item-type>DateTime</item-type>
+		<label>Measurement Date</label>
+		<description>Date...</description>
+		<state readOnly="true"/>
+	</channel-type>
+
+</thing:thing-descriptions>
