@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[openhab-binding-pushbullet.pushbulletproperties]
+file_filter = bundles/org.openhab.binding.pushbullet/src/main/resources/ESH-INF/i18n/pushbullet_<lang>.properties
+source_file = bundles/org.openhab.binding.pushbullet/src/main/resources/ESH-INF/i18n/pushbullet_en.template.properties
+source_lang = en
+type = PROPERTIES
+
