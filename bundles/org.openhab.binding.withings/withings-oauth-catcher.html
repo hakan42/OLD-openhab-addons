@@ -1,0 +1,31 @@
+<html>
+  <title>withings oauth catcher</title>
+  <body>
+    <h1>withings oauth catcher</h1>
+    <ul>
+      <li>(1) create an application over at ... TODO - insert link here</li>
+      <li>(2) Click on this <span id="authorize"><a>link</a></span> here to start authorization with Withings</li>
+      <li>(3) After coming back, copy this code: <span id="auth_code"></span></li>
+    </ul>
+    <!--
+    -->
+    <script>
+      // TODO this is the URI of self, just encoded...
+      var url_string = [location.protocol, '//', location.host, location.pathname].join('');
+      redirect_uri = encodeURI(url_string);
+
+      // This is the client ID of the application created...
+      var client_id = "cbf879f14b7530599713c4e16f9f07af40a8a2f811d2ccfe256031d2c669ea17";
+
+      var abc = "https://account.withings.com/oauth2_user/authorize2?response_type=code&client_id=" + client_id + "&redirect_uri=" + redirect_uri + "&state=testing&scope=user.info,user.metrics";
+
+      document.getElementById('authorize').innerHTML = '<a href="' + abc + '">link</a>';
+
+      // If we are on the second call step, extract the auth code from the URL
+      var url = new URL(window.location.href);
+      var code = url.searchParams.get("code");
+      document.getElementById('auth_code').innerHTML = code;
+      
+    </script>
+  </body>
+</html>

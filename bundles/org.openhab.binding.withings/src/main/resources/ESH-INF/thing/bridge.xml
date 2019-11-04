@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="withings"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+						xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<!-- Withings API Bridge -->
+
+	<bridge-type id="api">
+		<label>Withings API</label>
+		<description>The Withings bridge represents an user who uses certain devices.</description>
+
+		<properties>
+			<property name="vendor">Withings</property>
+		</properties>
+
+		<!--
+		<representation-property>serialNumber</representation-property>
+		-->
+
+		<config-description>
+			<parameter name="pollingInterval" type="integer" required="false" min="3600" unit="s">
+				<label>Data polling interval</label>
+				<description>Specifies the data refresh interval in seconds.</description>
+				<default>86400</default>
+			</parameter>
+
+			<parameter name="tokenRefreshInterval" type="integer" required="false" min="1800" max="10800" unit="s">
+				<label>OAuth Token refresh Interval</label>
+				<description>Specifies the token refresh interval in seconds.</description>
+				<default>7200</default>
+				<advanced>true</advanced>
+			</parameter>
+
+			<parameter name="oauthUrlBase" type="text" required="true">
+				<context>network-address</context>
+				<label>Authentication Server</label>
+				<description>The Withings OAuth API Server to use, configurable for testing and development.</description>
+				<default>https://account.withings.com/oauth2</default>
+				<advanced>true</advanced>
+			</parameter>
+
+			<parameter name="apiUrlBase" type="text" required="true">
+				<context>network-address</context>
+				<label>API Server</label>
+				<description>The Withings API Server to use, configurable for testing and development.</description>
+				<default>https://wbsapi.withings.net</default>
+				<advanced>true</advanced>
+			</parameter>
+
+			<parameter name="demoUser" type="boolean" required="true">
+				<label>Demo User</label>
+				<description>Demo user which has all devices possible, configurable for testing and development.</description>
+				<default>https://wbsapi.withings.net</default>
+				<advanced>true</advanced>
+			</parameter>
+
+		</config-description>
+
+	</bridge-type>
+
+</thing:thing-descriptions>

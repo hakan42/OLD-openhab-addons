@@ -1,0 +1,70 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "access_token",
+    "expires_in",
+    "token_type",
+    "scope",
+    "refresh_token",
+    "userid"
+  ],
+  "properties": {
+    "access_token": {
+      "$id": "#/properties/access_token",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "1234567890123456789012345678901234567890"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "expires_in": {
+      "$id": "#/properties/expires_in",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "10800"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "token_type": {
+      "$id": "#/properties/token_type",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Bearer"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "scope": {
+      "$id": "#/properties/scope",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "user.info,user.metrics"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "refresh_token": {
+      "$id": "#/properties/refresh_token",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "1234567890123456789012345678901234567890"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "userid": {
+      "$id": "#/properties/userid",
+      "type": "integer",
+      "default": 0,
+      "examples": [
+        4711
+      ]
+    }
+  }
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.openhab.addons.bundles</groupId>
+    <artifactId>org.openhab.addons.reactor.bundles</artifactId>
+    <version>2.5.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>org.openhab.binding.withings</artifactId>
+
+  <name>openHAB Add-ons :: Bundles :: Withings Binding</name>
+
+  <properties>
+    <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
+    <jsonschema2pojo-maven-plugin.version>1.0.1</jsonschema2pojo-maven-plugin.version>
+    <maven-dependency-plugin.version>2.8</maven-dependency-plugin.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <!-- TODO the dependency tree is not necessary in the final build... -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>${maven-dependency-plugin.version}</version>
+        <configuration>
+          <outputFile>${project.build.directory}/dependencies.txt</outputFile>
+        </configuration>
+        <executions>
+          <execution>
+            <id>dependency-tree</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>tree</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.jsonschema2pojo</groupId>
+        <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+        <version>${jsonschema2pojo-maven-plugin.version}</version>
+        <configuration>
+          <sourceDirectory>${basedir}/src/main/resources/schema</sourceDirectory>
+          <targetPackage>org.openhab.binding.withings.internal.dto</targetPackage>
+          <annotationStyle>gson</annotationStyle>
+          <generateBuilders>true</generateBuilders>
+          <initializeCollections>true</initializeCollections>
+          <!-- SAT does not like the Integer comparisions created by this plugin -->
+          <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>${build-helper-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.build.directory}/generated-sources/jsonschema2pojo/</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

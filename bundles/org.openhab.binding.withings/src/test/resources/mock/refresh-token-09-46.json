@@ -1,0 +1,8 @@
+{
+  "access_token": "1234567890123456789012345678901234567890",
+  "expires_in": "10800",
+  "token_type": "Bearer",
+  "scope": "user.info,user.metrics",
+  "refresh_token": "1234567890--abcdefghijklmnopqrstuvwxyz--",
+  "userid": 4711
+}
