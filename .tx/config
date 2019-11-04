@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[openhab-binding-withings.withingsproperties]
+file_filter = bundles/org.openhab.binding.withings/src/main/resources/ESH-INF/i18n/withings_<lang>.properties
+source_file = bundles/org.openhab.binding.withings/src/main/resources/ESH-INF/i18n/withings_en.template.properties
+source_lang = en
+type = PROPERTIES
+
