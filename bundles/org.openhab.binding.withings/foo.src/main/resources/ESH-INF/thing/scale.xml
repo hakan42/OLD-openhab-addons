@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="withings"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+	<thing-type id="scale">
+		<supported-bridge-type-refs>
+			<bridge-type-ref id="bridge" />
+		</supported-bridge-type-refs>
+
+		<label>Withings Binding Scale Thing</label>
+		<description>Scale thing for Withings Binding</description>
+
+		<channels>
+			<channel id="raw-input-for-ifttt" typeId="raw-input-for-ifttt"/>
+
+			<channel id="weight" typeId="weight"/>
+			<channel id="lean-mass" typeId="lean-mass"/>
+			<channel id="fat-mass" typeId="fat-mass"/>
+			<channel id="body-fat" typeId="body-fat-percentage"/>
+
+			<channel id="measured-at" typeId="measured-at"/>
+		</channels>
+
+		<properties>
+			<property name="FoobarId">Foobar ID</property>
+		</properties>
+
+		<config-description-ref uri="thing-type:withings:config" />
+	</thing-type>
+
+</thing:thing-descriptions>

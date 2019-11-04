@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="withings" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+	<!-- Withings API Bridge -->
+	<bridge-type id="bridge">
+		<label>Withings Bridge</label>
+		<description>The Withings bridge represents the Withings API server bridge.</description>
+
+		<channels>
+			<channel id="accessToken" typeId="accessToken" />
+		</channels>
+
+		<properties>
+			<property name="vendor">Withings</property>
+		</properties>
+
+		<representation-property>clientId</representation-property>
+
+		<config-description>
+			<!--
+			<parameter name="ipAddress" type="text">
+				<context>network-address</context>
+				<label>Network Address</label>
+				<description>Network address of the Hue bridge.</description>
+				<required>true</required>
+			</parameter>
+			<parameter name="userName" type="text">
+				<context>password</context>
+				<label>Username</label>
+				<description>Name of a registered Hue bridge user, that allows to access the API.</description>
+				<required>false</required>
+			</parameter>
+			<parameter name="pollingInterval" type="integer" min="1" step="1" unit="s">
+				<label>Polling Interval</label>
+				<description>Seconds between fetching values from the Hue bridge.</description>
+				<required>true</required>
+				<default>10</default>
+			</parameter>
+			<parameter name="sensorPollingInterval" type="integer" min="50" step="1" unit="ms">
+				<label>Sensor Polling Interval</label>
+				<description>Milliseconds between fetching sensor-values from the Hue bridge. A higher value means more delay for the sensor values, but a too low value can cause congestion on the Hue bridge.</description>
+				<required>true</required>
+				<default>500</default>
+			</parameter>
+		-->
+			<parameter name="clientId" type="text">
+				<required>true</required>
+				<label>Application Client ID</label>
+				<description>This is the Client ID provided by Spotify when you add a new Application for openHAB to your Spotify
+					Account. Go to https://developer.spotify.com/</description>
+			</parameter>
+			<parameter name="clientSecret" type="text">
+				<required>true</required>
+				<label>Application Client Secret</label>
+				<description>This is the Client Secret provided by Spotify when you add a new Application for openHAB to your Spotify Account.</description>
+			</parameter>
+			<parameter name="refreshPeriod" type="integer" min="1" max="60">
+				<required>true</required>
+				<default>5</default>
+				<label>Connect refresh period (seconds)</label>
+				<description>This is the frequency of the polling requests to the Spotify Connect WebAPI. There are limits to the number of requests
+					that can be sent to the WebAPI. The more often you poll, the better status updates - at the risk of running out of your request quota.</description>
+			</parameter>
+			<parameter name="refreshToken" type="text" readOnly="true">
+				<required>false</required>
+				<label>Client Authorization Refresh Token</label>
+				<description>This This is the refresh token provided by Spotify when you authorize yourself with the Web API and grant the required scope
+					access. After authorization this field will hold the refreshToken used to re-authorize with the Web API.</description>
+			</parameter>
+		</config-description>
+	</bridge-type>
+
+</thing:thing-descriptions>
